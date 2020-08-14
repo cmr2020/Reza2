@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Reza.Core.Services;
+using Reza.Core.Services.Interfaces;
 using Reza.DataLayer.Context;
 
 namespace Reza
@@ -26,6 +28,9 @@ namespace Reza
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddTransient<ITestService,TestService>();
+            services.AddTransient<IEducationService, EducationService>();
 
             #region Db Context
 

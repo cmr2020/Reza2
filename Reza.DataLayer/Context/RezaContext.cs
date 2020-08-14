@@ -14,7 +14,7 @@ namespace Reza.DataLayer.Context
         }
 
         public DbSet<Education> Educations { get; set; }
-
+        public DbSet<TestModel> TestModels { get; set; }
 
     }
 }
