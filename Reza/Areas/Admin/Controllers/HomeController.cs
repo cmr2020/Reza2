@@ -30,11 +30,12 @@ namespace Reza.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,CreateDate")] TestModel testModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,")] TestModel testModel)
         {
             if (ModelState.IsValid)
             {
-                _testService.Add.ToString((testModel.Description, testModel.ImageName));
+              //  _testService.Add.ToString((testModel.Description, testModel.ImageName));
+      
               
                 return RedirectToAction(nameof(Index));
             }
