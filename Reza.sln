@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reza", "Reza\Reza.csproj", "{6225F0A8-F074-4ED2-8EDE-B3359ABE673E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reza.DataLayer", "Reza.DataLayer\Reza.DataLayer.csproj", "{1BAE077C-1048-4716-8949-E91A2A24876F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reza.Core", "Reza.Core\Reza.Core.csproj", "{A46E71BA-D393-4B46-8BDB-40AFFBF217BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6225F0A8-F074-4ED2-8EDE-B3359ABE673E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6225F0A8-F074-4ED2-8EDE-B3359ABE673E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6225F0A8-F074-4ED2-8EDE-B3359ABE673E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6225F0A8-F074-4ED2-8EDE-B3359ABE673E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BAE077C-1048-4716-8949-E91A2A24876F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BAE077C-1048-4716-8949-E91A2A24876F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BAE077C-1048-4716-8949-E91A2A24876F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BAE077C-1048-4716-8949-E91A2A24876F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A46E71BA-D393-4B46-8BDB-40AFFBF217BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A46E71BA-D393-4B46-8BDB-40AFFBF217BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A46E71BA-D393-4B46-8BDB-40AFFBF217BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A46E71BA-D393-4B46-8BDB-40AFFBF217BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {978A1FEA-3324-4D59-88CE-8941D33BF5F9}
+	EndGlobalSection
+EndGlobal
