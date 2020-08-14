@@ -11,16 +11,16 @@ namespace Reza.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
-        IEducationService _education;
-        public HomeController(IEducationService education)
-        {
-            _education = education;
-        }
+        ITestService _testService;
 
+        public HomeController(ITestService testService)
+        {
+            _testService = testService;
+        }
 
         public IActionResult Index()
         {
-            return View(_education.GetAllEducation());
+            return View(_testService.GetAll());
         }
 
         public IActionResult Create()
@@ -30,12 +30,19 @@ namespace Reza.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Education education)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,CreateDate")] TestModel testModel)
         {
-            _education.InsertEducation(education);
-            return View(education);
+            if (ModelState.IsValid)
+            {
+                _testService.Add.ToString((testModel.Description, testModel.ImageName));
+              
+                return RedirectToAction(nameof(Index));
+            }
+            return View(testModel);
         }
 
-
+     
     }
+
+
 }
