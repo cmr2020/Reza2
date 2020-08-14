@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Reza.Core.Services.Interfaces;
 using Reza.DataLayer.Entitis;
@@ -30,11 +31,11 @@ namespace Reza.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,")] TestModel testModel)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,")] TestModel testModel,IFormFile img)
         {
             if (ModelState.IsValid)
             {
-              //  _testService.Add.ToString((testModel.Description, testModel.ImageName));
+               _testService.Add(testModel,img);
       
               
                 return RedirectToAction(nameof(Index));
@@ -42,8 +43,52 @@ namespace Reza.Areas.Admin.Controllers
             return View(testModel);
         }
 
-     
-    }
+
+
+        public IActionResult Edit(int? id)
+        {
+
+            var test = _testService.GetById(id.Value);
+
+
+            return View(test);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,")] TestModel testModel, IFormFile img)
+        {
+            _testService.Edit(testModel, img);
+            _testService.Save();
+
+
+            return View(testModel);
+        }
+
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            var test2 = _testService.GetById(id.Value);
+            return View(test2);
+
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(TestModel test)
+        {
+            _testService.Delete(test);
+            _testService.Save();
+            return RedirectToAction(nameof(Index));
+
+        }
+
+
+        }
+
+  
+
 
 
 }

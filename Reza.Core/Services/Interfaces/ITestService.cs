@@ -13,5 +13,6 @@ namespace Reza.Core.Services.Interfaces
        void Delete(TestModel test);
        List<TestModel> GetAll();
        TestModel GetById(int id);
-   }
+        void Save();
+    }
 }

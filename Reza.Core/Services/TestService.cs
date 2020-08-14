@@ -66,5 +66,10 @@ namespace Reza.Core.Services
         {
             return _context.TestModels.Find(id);
         }
+
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
     }
 }
