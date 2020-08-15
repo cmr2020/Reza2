@@ -60,7 +60,7 @@ namespace Reza.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,")] TestModel testModel, IFormFile img)
         {
             _testService.Edit(testModel, img);
-            _testService.Save();
+          
 
 
             return View(testModel);
@@ -79,7 +79,7 @@ namespace Reza.Areas.Admin.Controllers
         public async Task<IActionResult> DeleteConfirmed(TestModel test)
         {
             _testService.Delete(test);
-            _testService.Save();
+          
             return RedirectToAction(nameof(Index));
 
         }
